@@ -11,6 +11,11 @@ public class MecanumRobot extends Robot {
     private final DcMotor rightFrontMotor;
     private final DcMotor rightBackMotor;
     private final DcMotor[] motors;
+    
+    static final int COUNTS_PER_MOTOR_REV = 1440; //?
+    static final float DRIVE_GEAR_REDUCTION = 2.0f; //?
+    static final float WHEEL_DIAMETER_INCHES = 6.0f; //?
+    static final float COUNTS_PER_INCH = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415f);
 
     public MecanumRobot(HardwareMap hardwareMap) {
         super(4, hardwareMap);
